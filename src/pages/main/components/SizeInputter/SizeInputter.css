@@ -1,0 +1,40 @@
+.size-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-input {
+  display: grid;
+  grid-template-columns: 60px 65px; 
+  align-items: center;    
+  gap: 8px;                 
+  margin: 0 auto 12px auto;  
+  width: max-content;        
+  
+  color: #a0a5b5;            
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.number-input input {
+  background-color: #252630;
+  color: #ffffff;
+  border: 1px solid #3f4257;
+  border-radius: 4px;
+  padding: 4px 6px;
+  width: 100%;               
+  box-sizing: border-box;    
+}
+
+.grid-controller-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* .grid-controller-button-container > * {
+  padding-left: 2rem;
+} */

@@ -1,0 +1,11 @@
+.return-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-top: 0.75 rem;
+    justify-content: center;
+}
+
+.return-box {
+    padding-top: 1.5rem;
+}

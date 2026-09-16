@@ -1,0 +1,89 @@
+/* ==========================================================================
+   State & Spectrum Themes (Updated Selector Scope)
+   ========================================================================== */
+
+/* This now targets grid-items ONLY if they live inside a .heatmap-grid container */
+/* Update your grid-item styles to include position: relative */
+.heatmap-grid .grid-item {
+  position: relative;
+}
+
+.heatmap-grid .grid-item.unfilled {
+  background-color: #475569; /* Slate 600 */
+}
+
+.heatmap-grid .grid-item.unfilled:hover {
+  background-color: #64748b; 
+}
+
+.heatmap-grid .grid-item.filled {
+  --base-hue: calc(270 - (var(--percent) * 1.5));
+  background-color: hsl(var(--base-hue), 80%, 55%);
+}
+
+.heatmap-grid .grid-item.filled:hover {
+  background-color: hsl(var(--base-hue), 80%, 45%);
+}
+
+.heatmap-grid .grid-item.center-cell {
+  --base-hue: 60; 
+  background-color: hsl(var(--base-hue), 95%, 50%) !important;
+}
+
+.heatmap-grid .grid-item.center-cell:hover {
+  background-color: hsl(var(--base-hue), 95%, 40%) !important;
+}
+
+.heatmap-grid .grid-item:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: -3px; 
+}
+
+/* ==========================================================================
+   Inner Centered Text Overlay (Updated Selector Scope)
+   ========================================================================== */
+
+.heatmap-grid .grid-item::after {
+  content: attr(data-value);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s ease;
+  
+  /* Base text color rules when permanently shown */
+  color: #ffffff;
+}
+
+/* Base static text color styles matching your hover aesthetics */
+.heatmap-grid .grid-item.unfilled::after { color: #f8fafc; }
+.heatmap-grid .grid-item.center-cell::after { color: #000000; }
+
+.heatmap-grid .grid-item:hover::after {
+  opacity: 1;
+}
+
+.heatmap-grid.show-values .grid-item.filled::after {
+  opacity: 1;
+}
+
+/* Dynamic text color alterations on mouse tracking hover states */
+.heatmap-grid .grid-item.unfilled:hover::after {
+  color: #f8fafc; 
+}
+
+.heatmap-grid .grid-item.filled:hover::after {
+  color: #ffffff; 
+}
+
+.heatmap-grid .grid-item.center-cell:hover::after {
+  color: #000000; 
+}

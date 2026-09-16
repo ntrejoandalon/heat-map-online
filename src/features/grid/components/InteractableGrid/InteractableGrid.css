@@ -1,0 +1,22 @@
+/* State Styling */
+.grid-item.unfilled {
+  background-color: #f8fafc; /* Slate 50 */
+}
+
+.grid-item.filled {
+  background-color: #834cbc; /* Slate 900 */
+}
+
+/* Hover feedback depending on current state */
+.grid-item.unfilled:hover {
+  background-color: #cbd5e1;
+}
+
+.grid-item.filled:hover {
+  background-color: #c2a5e0;
+}
+
+.grid-item:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: -3px; /* Keeps outline inside the cell */
+}

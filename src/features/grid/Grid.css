@@ -1,0 +1,24 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  gap: 4px; /* Tight gap resembles a game board */
+  width: 100%;
+  max-width: 500px; /* Limits size to keep it square/rectangular */
+  aspect-ratio: calc(var(--cols) / var(--rows)); /* Automatically matches board proportions */
+  background-color: #1e293b; /* Board border color */
+  padding: 4px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.grid-item {
+  width: 100%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative; /* Crucial for anchoring the centered hover text */
+  transition: background-color 0.15s ease;
+}

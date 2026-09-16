@@ -1,0 +1,15 @@
+/* Mobile styles (Default) */
+.content {
+  display: flex;
+  flex-direction: column; /* Stack items vertically on small screens */
+  gap: 1.5rem;            /* Adds uniform space between stacked items */
+  padding-top: 2.5rem;
+}
+
+/* Desktop styles (Screen widths 768px and wider) */
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;      /* Switch back to a horizontal row */
+    justify-content: space-evenly; /* Evenly distribute empty space around items */
+  }
+}
